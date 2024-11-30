@@ -64,7 +64,7 @@ async def send_random_value(callback: types.CallbackQuery, state: FSMContext):
     receiver_id = callback.data.split("_")[1]
     del_message = await callback.message.reply(text="💛 Напиши ответ")
     await state.set_state(LinkAnswer.getAnswer)
-    await state.update_data(reciver_id=receiver_id)
+    await state.update_data(receiver_id=receiver_id)
     await state.update_data(del_message_id=del_message.message_id)
 
 
